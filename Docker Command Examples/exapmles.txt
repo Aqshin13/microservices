@@ -1,0 +1,36 @@
+1)docker run in28min/todo-rest-api-h2:1.0.0.RELEASE
+
+docker'i run etmek ucun emr'dir. run'dan sonra image adidir.Ise duse ise image'in container'dir.
+
+2)docker run (port acmaq ucun) -p 5000(local):5000(docker) in28min/todo-rest-api-h2:1.0.0.RELEASE(image name)
+
+
+
+3)docker run -p -d 5000:5000 in28min/todo-rest-api-h2:1.0.0.RELEASE
+ Burdaki -d app'i arxa planda ise salmaga komek edir
+ 
+ 
+ 4)docker logs 04e52ff9270f5810eefe1f77222852dc1461c22440d4ecd6228b5c38f09d838e(container id)
+ 
+ Bu kod isleyen container'in logun gosterir. Hemicinin siz ilk 3-4 simvoulda vere bilersiz
+( docker logs c2ba)
+
+
+
+5)docker logs -f c2ba(container id)
+Bu emr ise size canli logu verir.Yeni nese olsa terminalda eks olunur
+
+6)docker container ls
+Isleyen container'leri siraliyir.
+
+
+7)docker images
+Butun image'leri siraliyir local masinimda olan
+
+
+8)docker container ls -a
+Isleyen dayanan butun containerleri sirlayir
+
+
+9)docker container stop f708b7ee1a8b(elave id yazmaq olar) 
+Container'i stop edir
