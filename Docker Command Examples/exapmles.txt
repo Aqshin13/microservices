@@ -2,35 +2,65 @@
 
 docker'i run etmek ucun emr'dir. run'dan sonra image adidir.Ise duse ise image'in container'dir.
 
+********************************************************************************************************************************
 2)docker run (port acmaq ucun) -p 5000(local):5000(docker) in28min/todo-rest-api-h2:1.0.0.RELEASE(image name)
 
-
+********************************************************************************************************************************
 
 3)docker run -p -d 5000:5000 in28min/todo-rest-api-h2:1.0.0.RELEASE
  Burdaki -d app'i arxa planda ise salmaga komek edir
+********************************************************************************************************************************
  
- 
- 4)docker logs 04e52ff9270f5810eefe1f77222852dc1461c22440d4ecd6228b5c38f09d838e(container id)
+4)docker logs 04e52ff9270f5810eefe1f77222852dc1461c22440d4ecd6228b5c38f09d838e(container id)
  
  Bu kod isleyen container'in logun gosterir. Hemicinin siz ilk 3-4 simvoulda vere bilersiz
 ( docker logs c2ba)
 
-
+********************************************************************************************************************************
 
 5)docker logs -f c2ba(container id)
 Bu emr ise size canli logu verir.Yeni nese olsa terminalda eks olunur
-
+********************************************************************************************************************************
 6)docker container ls
 Isleyen container'leri siraliyir.
-
+********************************************************************************************************************************
 
 7)docker images
 Butun image'leri siraliyir local masinimda olan
-
+********************************************************************************************************************************
 
 8)docker container ls -a
 Isleyen dayanan butun containerleri sirlayir
-
+********************************************************************************************************************************
 
 9)docker container stop f708b7ee1a8b(elave id yazmaq olar) 
 Container'i stop edir
+********************************************************************************************************************************
+
+/////// Docker Deamon Image ve Container'leri manage edir.Misal Image varsa run edir yoxdusa registry'den download edir.Hemcinin image create etmek istesez buraxilan emrleri yene Deamon basa dusur ve Image yaradir.....(Emrler Clientden Deamon'a gonderilir)
+
+
+
+10) docker tag in28min/todo-rest-api-h2:1.0.0.RELEASE  in28min/todo-rest-api-h2:latest   ---> Tag name'i change etmek ucun istifade olunur.Bu zaman image id sabit qalir yeni deyismir
+
+
+
+11)docker pull mysql---> registry'den mysql'i pull edir. Ve eger sen version qeyd etmesen onda latest version pull edir
+
+12)docker search mysql ---> bu emr registry'de mysql'leri axtarir.Siz axtarise esasan offical mysql ve s tapa bilersiz
+
+
+
+13) docker image history in28min/hello-world-java:0.0.1.RELEASE
+Bu emr image create olunanda istifade olunan addimlari bize gosterir.Tekce emr deyil diger melumnatlarda var.Beleki docker image eslinde linux uzerinde create olunur ve o create olunanda path ve s config etmek lazimdi.Amma Docker bunu auto edir.
+
+
+
+
+14)docker image inspect 100229ba687e
+Siz bu kodla image'i inceliye bilirsiz.Beleki loglarda siz bir image'in nece dene tag olmasini enivorment'in ne oldugunu ve s kimi melumatlar olan log gorursuz
+
+
+
+15)docker image remove mysql  (docker rm remove image_id)
+Image'i localdan silir
