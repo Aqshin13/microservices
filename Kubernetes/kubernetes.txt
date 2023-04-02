@@ -1,0 +1,31 @@
+1)Google Cloudda  Clusterime connect olmaq ucun connect deyilen bir button'a click edirik.Sonra size bir command verir.Hemin command'i Google Cloud Shall'de yaziriq.
+
+
+2)kubectl cluster ile elaqe yaratmaga komek eden kuberenetes emr'dir.Google Cloud'da K8S onsuz yukudur.Ve siz k8S emri ucun kubectl
+emri buraxirsiz.
+
+
+3)kubectl create deployment hello-world-rest-api(sadece service name) --image=in28min/hello-world-rest-api:0.0.1.RELEASE(Docker Hub'dan download olacaq image)
+Biz sadece image'i deploy etdik ve k8s hemin image bir deploymen_id verdi.indi ise biz bu app'i xarice acmaliyiq
+
+(Clustere deploy olunur.)
+
+4)kubectl expose deployment hello-world-rest-api --type=LoadBalancer --port=8080
+LoadBalancer ile 8080 portunda xarice acir
+
+
+Google Cloud Platformda isleyen servicelere baxa bilerik.
+Bize bir port verir.Hemcinin statusu ve type'i gosterir
+
+
+32.12.123.12:8080/hello-world deye bilerik artiq.
+
+
+5)kubectl get pods
+kubectl get replicaset
+kubectl get deployment
+kubectl get service 
+
+
+pods ve s get olunur
+
