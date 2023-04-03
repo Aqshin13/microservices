@@ -1,18 +1,19 @@
 1)Google Cloudda  Clusterime connect olmaq ucun connect deyilen bir button'a click edirik.Sonra size bir command verir.Hemin command'i Google Cloud Shall'de yaziriq.
 
+*************************************************************************************************************************************
 
 2)kubectl cluster ile elaqe yaratmaga komek eden kuberenetes emr'dir.Google Cloud'da K8S onsuz yukudur.Ve siz k8S emri ucun kubectl
 emri buraxirsiz.
-
+*************************************************************************************************************************************
 
 3)kubectl create deployment hello-world-rest-api(sadece service name) --image=in28min/hello-world-rest-api:0.0.1.RELEASE(Docker Hub'dan download olacaq image)
 Biz sadece image'i deploy etdik ve k8s hemin image bir deploymen_id verdi.indi ise biz bu app'i xarice acmaliyiq
 
 (Clustere deploy olunur.)
-
+*************************************************************************************************************************************
 4)kubectl expose deployment hello-world-rest-api --type=LoadBalancer --port=8080
 LoadBalancer ile 8080 portunda xarice acir
-
+*************************************************************************************************************************************
 
 Google Cloud Platformda isleyen servicelere baxa bilerik.
 Bize bir port verir.Hemcinin statusu ve type'i gosterir
@@ -20,7 +21,7 @@ Bize bir port verir.Hemcinin statusu ve type'i gosterir
 
 32.12.123.12:8080/hello-world deye bilerik artiq.
 
-
+*************************************************************************************************************************************
 5)kubectl get pods
 kubectl get replicaset
 kubectl get deployment
@@ -28,4 +29,52 @@ kubectl get service
 
 
 pods ve s get olunur
+*************************************************************************************************************************************
+
+
+POD-------------------(Container pod'da isleyir)
+
+Container'lar pod'da isleyir.Bir pod'da 1 contaniner olmaidi. Amma coxda ola biler.Pod en kicik elementdir deye bilerik
+
+6)kubectl get pods -o wide
+Podlar haqqinda melumat verir.IP nomresi ve s. 1/1 NOMINETED NODE melumati olur.Yeni nece pod var ve necesi hazirdi.Bir podda coxlu container ola biler.Ve onlar bir biri ile elaqe saxlaya biler
+
+*************************************************************************************************************************************
+
+7)kubectl explain pods
+Pod'un ne oldugu haqqda melumar verir.
+*************************************************************************************************************************************
+
+8)kubectl get pods----podlar qaytarilir ve podun ID'si olur. SOnra kubectl describe pod hello-world-rest-api-58ff5dd898-9trh2 emri buraxilir ve pod haqqinda etrafli melumat almaq olur
+*************************************************************************************************************************************
+
+*************************************************************************************************************************************
+*************************************************************************************************************************************
+*************************************************************************************************************************************
+
+REPLICASET-----------------(pod sayini manage edir)
+
+
+9)kubectl get replicasets
+kubectl get replicaset
+kubectl get rs---> 3 emrde eyni isi gorur.Replicaset qaytarir
+
+
+Replicaset n(1,2,3,4) sayda pod'un  islemesini temin edir.Get replciaset edende desired yazilan hisse mehz bunu qeyd edir.1 yazilibsa demeli 1 pod ola biler
+
+
+
+kubectl delete pod hello-world-rest-api-58ff5dd898-62l9d----> pod'u  oldurur.Amma replicasetde helede 1 podun islediyini gosterir.Cunki pod olen kimi replicaset avtomatic pod create edir
+
+*************************************************************************************************************************************
+10)kubectl scale deployment hello-world-rest-api --replicas=3
+ replicasetde 3 dene pod olmasini isteyirsemse buraxdigim emr
+ Hemcinin loadBalancer avtomatik her sorgunu ayri pod'a gonderir
+ 
+*************************************************************************************************************************************
+ 
+ 11)kubectl get events --sort.by=.metadata.creationTimestamp
+Zamana gore bas veren emeliyyatlari sort edir
+*************************************************************************************************************************************
+
 
