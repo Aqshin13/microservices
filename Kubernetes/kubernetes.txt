@@ -78,3 +78,18 @@ Zamana gore bas veren emeliyyatlari sort edir
 *************************************************************************************************************************************
 
 
+
+DEPLOYMENT-----------Downtime problemini aradan qaldirir.Siz yeni app'i update eden zaman yeni v1 version'i v2 ile evez eden zaman downtime yaranmir
+
+
+
+
+12)kubectl set image deployment hello-world-rest-api(deployment name) hello-world-rest-api(container_name)=DUMMY_IMAGE:TEST
+
+Bu yanlis deployment'dir.Amma yanlis olsa bele kohne deployment helede up'dir
+
+
+
+13)kubectl set image deployment hello-world-rest-api hello-world-rest-api=in28min/hello-world-rest-api:0.0.2.RELEASE
+Artiq evvelki podlar terminated olur.Sanki kohne image'i yenisi ile evez etdin.Her sey evvelki configde qalir.Meselen pod olur.
+
