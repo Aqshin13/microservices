@@ -64,7 +64,7 @@ Replicaset n(1,2,3,4) sayda pod'un  islemesini temin edir.Get replciaset edende 
 
 
 
-kubectl delete pod hello-world-rest-api-58ff5dd898-62l9d----> pod'u  oldurur.Amma replicasetde helede 1 podun islediyini gosterir.Cunki pod olen kimi replicaset avtomatic pod create edir
+kubectl delete pod hello-world-rest-api-58ff5dd898-62l9d----> pod'u  oldurur.Amma replicasetde helede 1 podun islediyini gosterir.Cunki pod olen kimi replicaset avtomatic pod create edir.Hemin podun Yeni IP addressi olur
 
 *************************************************************************************************************************************
 10)kubectl scale deployment hello-world-rest-api --replicas=3
@@ -82,14 +82,31 @@ Zamana gore bas veren emeliyyatlari sort edir
 DEPLOYMENT-----------Downtime problemini aradan qaldirir.Siz yeni app'i update eden zaman yeni v1 version'i v2 ile evez eden zaman downtime yaranmir
 
 
-
+*************************************************************************************************************************************
 
 12)kubectl set image deployment hello-world-rest-api(deployment name) hello-world-rest-api(container_name)=DUMMY_IMAGE:TEST
 
 Bu yanlis deployment'dir.Amma yanlis olsa bele kohne deployment helede up'dir
 
-
+*************************************************************************************************************************************
 
 13)kubectl set image deployment hello-world-rest-api hello-world-rest-api=in28min/hello-world-rest-api:0.0.2.RELEASE
 Artiq evvelki podlar terminated olur.Sanki kohne image'i yenisi ile evez etdin.Her sey evvelki configde qalir.Meselen pod olur.
+
+*************************************************************************************************************************************
+*************************************************************************************************************************************
+
+
+
+
+SERVICES----------------------Podlarin IP nomreleri olur.Her defesinde pod silinende yeni IP adresi create olunur.Her defe Consumer'e yeni url vermek duzgun olmaz.Sadace bir url olur. Ve siz podlar silinse bele hemin url deyismir.Bunu K8S'de Service deyilen unit edir.
+Qisaca Servcisin rolu podun icinde isleyen app'a hemise istifade oluna bilen bir interface temin etmekdir.Service App deploy olunanda create  olunur
+
+
+14)kubectl get componentstatuses----> deyende master node'da olan unit'lerin veziyyetini qaytarir
+
+*************************************************************************************************************************************
+
+
+
 
