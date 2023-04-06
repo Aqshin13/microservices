@@ -108,5 +108,53 @@ Qisaca Servcisin rolu podun icinde isleyen app'a hemise istifade oluna bilen bir
 *************************************************************************************************************************************
 
 
+////////////////////
 
+DOCKER LOGIN
+docker login
+
+Docker image'i Docker Hub'a puslamaq ucun command
+docker push in28min/mmv3-currency-exchange-service:0.0.11-SNAPSHOT
+docker push in28min/mmv3-currency-conversion-service:0.0.11-SNAPSHOT
+
+
+15)
+kubectl create deployment currency-exchange --image=in28min/mmv3-currency-exchange-service:0.0.11-SNAPSHOT
+(Image create olunur)
+kubectl expose deployment currency-exchange --type=LoadBalancer --port=8000
+(Ve port acilir)
+
+
+16)kubectl get svc (services yazmaq olar)
+Servicler qaytairir
+
+(Qisaltmalar)
+
+kubectl get pods
+kubectl get po
+kubectl get replicaset
+kubectl get rs
+
+
+17)kubectl get all
+ise butun unit'leri verir.Pod rs deployment svc
+
+
+
+
+
+
+18)kubectl get deployments
+Bize deploymentleri verir.Yaml formasinda isteyirikse  kubectl get deployment (deployment_name) -o yaml deyirik
+
+
+kubectl get deployment (deployment_name) -o yaml >> deployment.yaml deyende hemin yaml datasini deployment.yaml fayli kimi saxlayir
+
+
+19)kubectl diff -f deployment.yaml
+Fayldaki ferqlilikleri gosterir
+
+
+20)kubectl apply -f deployment.yaml
+Oz deyisikliklerimi apply edirem.K8S bu deyisikliklere gore bezi deyisiklikler edir.Meselen 2 pod ayaga qaldirir ve s
 
