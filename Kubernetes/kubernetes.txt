@@ -158,3 +158,55 @@ Fayldaki ferqlilikleri gosterir
 20)kubectl apply -f deployment.yaml
 Oz deyisikliklerimi apply edirem.K8S bu deyisikliklere gore bezi deyisiklikler edir.Meselen 2 pod ayaga qaldirir ve s
 
+
+21)kubectl delete all -l app=currency-exchange
+kubectl delete all -l app=currency-conversion
+
+Deploymentleri silir(Pod service depoyment her seyi)
+
+
+21)kubectl apply -f deployment.yaml
+Bu emr hemcinin dployment create edir amma sizin hazir configler ile
+
+
+22)kubectl logs (pod_name)
+ App'in loglarini verir
+ 
+ 
+ 23)kubectl create configmap currency-conversion(name) --from-literal=CURRENCY_EXCHANGE_URI=http://currency-exchange
+K8S bize merkezi config teqdim edir.Misal ucun cuurency-conversion ucun merkezi configurasiya etmek ucun istifade ede bilerik.ENV create edirik ve bunun degeri currency-exchange url'i olur
+
+24)kubectl get configmap
+Configmap qaytarir
+
+
+25)kubectl get configmap currency-conversion -o yaml >> configmap.yaml
+Yaml formatinda almaq ucun ve save etmek ucun
+
+
+
+26)kubectl rollout history deployment currency-exchange
+Deploymentleti gosterir
+
+27)kubectl rollout undo deployment currency-exchange --to-revision=1
+Eger depoyment 2 islemirse xetalidisa 1e geri donus etmek olur
+
+
+
+28)kubectl autoscale deployment currency-exchange --min=1 --max=3 --cpu-percent=5 
+CPUda artiq yukelnme varsa podu artirir yoxdusa 1 de saxlayir bunlar avtomatik olur
+
+
+29)kubectl get hpa
+Autoscale datalarini goturmek istesem
+
+
+30)kubectl top pod
+kubectl top nodes
+
+Podlarin cpu memory ve s kimi xeclerin gosterir
+
+
+
+31)kubectl delete hpa currency-exchange
+autoscale silir
