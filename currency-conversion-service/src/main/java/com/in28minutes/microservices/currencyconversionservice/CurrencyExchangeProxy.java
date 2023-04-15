@@ -26,6 +26,10 @@ public interface CurrencyExchangeProxy {
 	 * 
 	 * 
 	 * */
+	
+	//Bu url eslinde basqa bir strukturda json qaytarir amma bizim CurrencyConversion serviceimiz demek olar ki eyni
+	//struktura malikdi deye avtomatik setleme gedir...
+	
 	@GetMapping("/currency-exchange/from/{from}/to/{to}")
 	public CurrencyConversion retrieveExchangeValue(
 			@PathVariable("from") String from,

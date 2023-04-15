@@ -48,7 +48,7 @@ public class CurrencyConversionController {
 		
 		
 		
-//		Rest templetde URL'e variables set edir mesele form{from} dursa
+//		Rest templetde URL'e variables set edir mesele from{from} dursa
 		HashMap<String, String> uriVariables = new HashMap<>();
 		uriVariables.put("from",from);
 		uriVariables.put("to",to);
