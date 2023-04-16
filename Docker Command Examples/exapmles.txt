@@ -120,7 +120,7 @@ container silinende ve ya create olunanda loglarda ne bas verdiyini gosterir
 ********************************************************************************************************************************
 
 25)docker top 9009722eac4d
-Isleyen container'de en ust emeliyyati (prossesi)size teqdim edir
+Isleyen container'de  emeliyyatlari (prossesi)size teqdim edir
 
 ********************************************************************************************************************************
 
