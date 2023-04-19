@@ -159,7 +159,7 @@ Bu da system melumatlari veren emrdir
 
 Distributed Tracing nedir?
 
-4-5 ms ola biler. Onlar arasinda request  izlemek ucun xetanin harda bas verdyini oyrenmek ucun Zipkin istifade olunur.Butun ms'ler sorgularini Distributed Tracing'e gonderir ve bu sorgular database'de saxlanilir....Zipkin Distributed Tracing sistemidir
+4-5 ms ola biler. Onlar arasinda request  izlemek ucun xetanin harda bas verdyini oyrenmek ucun Zipkin istifade olunur.Butun ms'ler sorgularini Distributed Tracing'e(Zipkin'e) gonderir ve bu sorgular database'de saxlanilir....Zipkin Distributed Tracing sistemidir
 
 
 32)docker run -p 9411:9411 openzipkin/zipkin:2.23

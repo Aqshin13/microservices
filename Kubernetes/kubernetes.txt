@@ -1,18 +1,35 @@
+-Clouda giris edende evvelce Kubernetes Engine'i active etmek lazimdi.Bunun ucun search panelde axtaris edirik.Sonra ise Create Cluster edirik
+
+-Cluster master node ve worker nod'lardan teskil olunur.
+
+
+-Cluster'e daxil oluruq.Sonra termianli active edirik.(Basqa sehifede de acmaq olar)
+
+
+
+
 1)Google Cloudda  Clusterime connect olmaq ucun connect deyilen bir button'a click edirik.Sonra size bir command verir.Hemin command'i Google Cloud Shall'de yaziriq.
 
+(Bu kod Cloud emri olur)
+
+
+
+
 *************************************************************************************************************************************
+Cluster node'larin birlesimidir....
+
 
 2)kubectl cluster ile elaqe yaratmaga komek eden kuberenetes emr'dir.Google Cloud'da K8S onsuz yukudur.Ve siz k8S emri ucun kubectl
 emri buraxirsiz.
 *************************************************************************************************************************************
 
-3)kubectl create deployment hello-world-rest-api(sadece service name) --image=in28min/hello-world-rest-api:0.0.1.RELEASE(Docker Hub'dan download olacaq image)
+3)kubectl create deployment hello-world-rest-api(sadece service name(deploymentin adi olmalidir)) --image=in28min/hello-world-rest-api:0.0.1.RELEASE(Docker Hub'dan download olacaq image)
 Biz sadece image'i deploy etdik ve k8s hemin image bir deploymen_id verdi.indi ise biz bu app'i xarice acmaliyiq
-
+(Bu zaman deployment replicaset ve pod create olur)
 (Clustere deploy olunur.)
 *************************************************************************************************************************************
-4)kubectl expose deployment hello-world-rest-api --type=LoadBalancer --port=8080
-LoadBalancer ile 8080 portunda xarice acir
+4)kubectl expose deployment hello-world-rest-api(deployment name yeni men bu deploymenti xarice aciram) --type=LoadBalancer --port=8080
+LoadBalancer ile 8080 portunda xarice acir(Bu zaman service create olur)
 *************************************************************************************************************************************
 
 Google Cloud Platformda isleyen servicelere baxa bilerik.
@@ -22,7 +39,7 @@ Bize bir port verir.Hemcinin statusu ve type'i gosterir
 32.12.123.12:8080/hello-world deye bilerik artiq.
 
 *************************************************************************************************************************************
-5)kubectl get pods
+5)kubectl get pods--> ready deyilen hissede container count gosterilir.
 kubectl get replicaset
 kubectl get deployment
 kubectl get service 
@@ -37,7 +54,7 @@ POD-------------------(Container pod'da isleyir)
 Container'lar pod'da isleyir.Bir pod'da 1 contaniner olmaidi. Amma coxda ola biler.Pod en kicik elementdir deye bilerik
 
 6)kubectl get pods -o wide
-Podlar haqqinda melumat verir.IP nomresi ve s. 1/1 NOMINETED NODE melumati olur.Yeni nece pod var ve necesi hazirdi.Bir podda coxlu container ola biler.Ve onlar bir biri ile elaqe saxlaya biler
+Podlar haqqinda melumat verir.IP nomresi ve s.Bir podda coxlu container ola biler.Ve onlar bir biri ile elaqe saxlaya biler
 
 *************************************************************************************************************************************
 
@@ -45,7 +62,8 @@ Podlar haqqinda melumat verir.IP nomresi ve s. 1/1 NOMINETED NODE melumati olur.
 Pod'un ne oldugu haqqda melumar verir.
 *************************************************************************************************************************************
 
-8)kubectl get pods----podlar qaytarilir ve podun ID'si olur. SOnra kubectl describe pod hello-world-rest-api-58ff5dd898-9trh2 emri buraxilir ve pod haqqinda etrafli melumat almaq olur
+8)kubectl get pods----podlar qaytarilir ve podun ID'si olur. 
+Sonra kubectl describe pod hello-world-rest-api-58ff5dd898-9trh2(POD_NAME) emri buraxilir ve pod haqqinda etrafli melumat almaq olur
 *************************************************************************************************************************************
 
 *************************************************************************************************************************************
@@ -79,7 +97,7 @@ Zamana gore bas veren emeliyyatlari sort edir
 
 
 
-DEPLOYMENT-----------Downtime problemini aradan qaldirir.Siz yeni app'i update eden zaman yeni v1 version'i v2 ile evez eden zaman downtime yaranmir
+DEPLOYMENT-----------Downtime problemini aradan qaldirir.Siz yeni app'i update eden zaman yeni v1 version'i v2 ile evez eden zaman downtime yaranmir(Eslinde Deployment replicaseti sanki create edir)
 
 
 *************************************************************************************************************************************
@@ -210,3 +228,8 @@ Podlarin cpu memory ve s kimi xeclerin gosterir
 
 31)kubectl delete hpa currency-exchange
 autoscale silir
+
+
+
+
+Stackdriver yazib logging unit'lerini enable etmek olar
