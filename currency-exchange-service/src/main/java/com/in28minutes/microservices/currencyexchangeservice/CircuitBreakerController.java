@@ -43,6 +43,6 @@ public class CircuitBreakerController {
 		return "fallback-response";
 	}
 	
-	
+//	mvn spring-boot:build-image -DskipTests
 	
 }

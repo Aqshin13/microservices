@@ -114,8 +114,8 @@ Container stop olur.Siz docker desktop'u yeniden basladanda ise container'de run
 ********************************************************************************************************************************
 
 
-24)docker system events
-container silinende ve ya create olunanda loglarda ne bas verdiyini gosterir
+24)docker system events ve ya docker events
+container silinende ve ya create olunanda loglarda ne bas verdiyini gosterir stop olunanda ve s
 
 ********************************************************************************************************************************
 
