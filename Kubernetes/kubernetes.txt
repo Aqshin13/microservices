@@ -21,6 +21,9 @@ Cluster node'larin birlesimidir....
 
 2)kubectl cluster ile elaqe yaratmaga komek eden kuberenetes emr'dir.Google Cloud'da K8S onsuz yukudur.Ve siz k8S emri ucun kubectl
 emri buraxirsiz.
+
+
+KUBECTL--->Client ile Cluster arasinda elaqe yaradan unit
 *************************************************************************************************************************************
 
 3)kubectl create deployment hello-world-rest-api(sadece service name(deploymentin adi olmalidir)) --image=in28min/hello-world-rest-api:0.0.1.RELEASE(Docker Hub'dan download olacaq image)
@@ -63,7 +66,8 @@ Pod'un ne oldugu haqqda melumar verir.
 *************************************************************************************************************************************
 
 8)kubectl get pods----podlar qaytarilir ve podun ID'si olur. 
-Sonra kubectl describe pod hello-world-rest-api-58ff5dd898-9trh2(POD_NAME) emri buraxilir ve pod haqqinda etrafli melumat almaq olur
+Sonra 
+8)kubectl describe pod hello-world-rest-api-58ff5dd898-9trh2(POD_NAME) emri buraxilir ve pod haqqinda etrafli melumat almaq olur
 *************************************************************************************************************************************
 
 *************************************************************************************************************************************
@@ -82,7 +86,7 @@ Replicaset n(1,2,3,4) sayda pod'un  islemesini temin edir.Get replciaset edende 
 
 
 
-kubectl delete pod hello-world-rest-api-58ff5dd898-62l9d----> pod'u  oldurur.Amma replicasetde helede 1 podun islediyini gosterir.Cunki pod olen kimi replicaset avtomatic pod create edir.Hemin podun Yeni IP addressi olur
+9)kubectl delete pod hello-world-rest-api-58ff5dd898-62l9d----> pod'u  oldurur.Amma replicasetde helede 1 podun islediyini gosterir.Cunki pod olen kimi replicaset avtomatic pod create edir.Hemin podun Yeni IP addressi olur
 
 *************************************************************************************************************************************
 10)kubectl scale deployment hello-world-rest-api --replicas=3
@@ -127,6 +131,12 @@ Qisaca Servcisin rolu podun icinde isleyen app'a hemise istifade oluna bilen bir
 
 
 ////////////////////
+
+
+GCloud Login
+
+
+gcloud auth login deyende auto browser open olacaq
 
 DOCKER LOGIN
 docker login
